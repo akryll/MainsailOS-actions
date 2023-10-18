@@ -127,4 +127,4 @@ runs:
 
     - name: Build Image
       shell: bash
-      run: sudo modprobe loop && cd repository/src && sudo bash -x ./build_dist
+      run: cd repository/src && sudo bash -x ./build_dist
