@@ -30,7 +30,7 @@ runs:
   steps:
     - name: Install Dependencies
       shell: bash
-      run: sudo apt update; sudo apt install --yes aria2 coreutils jq p7zip-full qemu-user-static zip fdisk
+      run: sudo apt update; sudo apt install --yes aria2 coreutils jq p7zip-full qemu-user-static zip fdisk kmod
 
     - name: Checkout CustomPiOS
       uses: actions/checkout@v3
@@ -127,4 +127,4 @@ runs:
 
     - name: Build Image
       shell: bash
-      run: cd repository/src && sudo bash -x ./build_dist
+      run: modprobe loop && cd repository/src && sudo bash -x ./build_dist
